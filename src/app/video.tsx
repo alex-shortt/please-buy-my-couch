@@ -26,7 +26,6 @@ export default function Video() {
       }
     };
     const onMove = (x: number) => {
-      console.log(x)
       if (!video.current) return;
       if (!video.current.paused) return;
       if (!dragging.current) return;

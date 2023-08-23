@@ -1,5 +1,8 @@
 import Details, { DetailPair } from "@/app/details";
 import Video from "@/app/video";
+import Carousel from "@/app/carousel";
+import { PRICE_STR } from "@/app/config";
+import { BigLine } from "@/app/line";
 
 export default function Home() {
   const sectionClass = "py-8 max-w-4xl mx-auto";
@@ -18,7 +21,7 @@ export default function Home() {
         <section id="product-info" className="mt-12 text-center">
           <h2 className="text-2xl">Victorian Couch</h2>
           <p className="text-gray-400 text-md">Ships to SF Bay Area Only</p>
-          <h2 className="text-2xl">Only $250</h2>
+          <h2 className="text-2xl">Only {PRICE_STR}</h2>
           <button className="max-w-lg w-[80%] mx-2 mt-4 py-4 text-xl bg-gray-200">
             Buy
           </button>
@@ -56,14 +59,45 @@ export default function Home() {
             </DetailPair>
           </Details>
         </section>
-        <div className="w-full h-0.5 bg-gray-600 mb-2" />
+        <BigLine />
+        <br />
+        <br />
         <section id="you-may-also-like">
           <h2 className="text-2xl text-center">YOU MAY ALSO LIKE</h2>
+          <br />
+          <Carousel />
         </section>
-        <div className="w-full h-0.5 bg-gray-600 mb-2" />
-        <section id="you-may-also-like">
-          <h2 className="text-2xl text-center">socials</h2>
+        <br />
+        <br />
+        <br />
+        <BigLine />
+        <section id="links flex">
+          <div className="flex flex-col max-w-sm">
+            <h2 className="font-bold">Resources</h2>
+            <a>Map of the Bay</a>
+            <a>What is a NeRF?</a>
+            <a>What about Gaussian Splatting?</a>
+            <a>What is Muse?</a>
+            <a>What happened to Muse Place?</a>
+          </div>
+          <div className="flex flex-col max-w-sm">
+            <h2 className="font-bold">Contact</h2>
+            <a>Send an Email</a>
+            <a>DM on Twitter</a>
+            <a>What about Gaussian Splatting?</a>
+            <a>What is Muse?</a>
+            <a>What happened to Muse Place?</a>
+          </div>
         </section>
+        <BigLine />
+        <section id="contact">
+          <h2 className="text-2xl text-center">
+            Copyright Terra Labs Inc. All rights reserved.
+          </h2>
+          <h2 className="text-2xl text-center">Terms of Use</h2>
+          <h2 className="text-2xl text-center">Privacy Policy</h2>
+        </section>
+        <div className="h-96" />
       </div>
     </div>
   );
