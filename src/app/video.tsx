@@ -1,6 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  PlayIcon,
+  PauseIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/solid";
 
 export default function Video() {
   const playOnRelease = useRef(true);
@@ -37,10 +43,10 @@ export default function Video() {
     };
     const onMouseMove = (e: MouseEvent) => onMove(e.movementX);
     const onTouchMove = (e: TouchEvent) => {
-      const deltaX = e.touches[0].clientX - lastTouchX.current
+      const deltaX = e.touches[0].clientX - lastTouchX.current;
       onMove(deltaX);
       lastTouchX.current = e.touches[0].clientX;
-    }
+    };
     const onUp = () => {
       dragging.current = false;
       setHolding(false);
@@ -86,7 +92,7 @@ export default function Video() {
 
   return (
     <>
-      <div className="relative">
+      <div className="video-player relative">
         <video
           ref={video}
           className={
@@ -104,13 +110,18 @@ export default function Video() {
           />
         </video>
         <div
-          className="absolute bottom-0 p-2 cursor-pointer text-white"
+          className="absolute bottom-0 p-2 cursor-pointer text-white z-10"
           onClick={togglePlay}
         >
-          {playing ? "PAUSE" : "PLAY"}
+          {playing && <PauseIcon height={32} />}
+          {!playing && <PlayIcon height={32} />}
         </div>
       </div>
-      <div className="text-center mt-4">&lt; Drag to Rotate &gt;</div>
+      <div className="text-center mt-4 flex items-center justify-center">
+        <ArrowLeftIcon height="1em" />
+        <p className="mx-4">Drag to Rotate</p>
+        <ArrowRightIcon height="1em" />
+      </div>
     </>
   );
 }

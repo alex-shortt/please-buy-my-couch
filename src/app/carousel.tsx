@@ -1,12 +1,16 @@
 "use client";
 
 import { PRICE_STR } from "@/app/config";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import { ChevronLeftIcon } from "@heroicons/react/24/solid";
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
 export default function Carousel() {
   const carousel = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: "left" | "right") => {
+  const lastClick = useRef(0);
+
+  const scroll = useCallback((direction: "left" | "right") => {
     if (!carousel.current) return;
 
     const width = carousel.current.children[0].clientWidth;
@@ -25,20 +29,38 @@ export default function Carousel() {
     } else {
       carousel.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!carousel.current) return;
+
+    const interval = setInterval(() => {
+      if (Date.now() - lastClick.current < 1000) return;
+      scroll("right");
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [scroll]);
+
+  const manualScroll = useCallback(
+    (dir: "left" | "right") => {
+      lastClick.current = Date.now();
+      scroll(dir);
+    },
+    [scroll],
+  );
 
   return (
-    <div className="w-full h-36 relative">
-      <div
-        className="absolute top-[50%] left-0 translate-y-[-50%] translate-x-[-100%] cursor-pointer"
-        onClick={() => scroll("left")}
-      >
-        LEFT
+    <div className="w-full h-56 relative flex items-center text-3xl">
+      <div className="cursor-pointer" onClick={() => manualScroll("left")}>
+        <ChevronLeftIcon height="1em" />
       </div>
       <div
         ref={carousel}
-        className="w-full h-full overflow-hidden whitespace-nowrap"
+        className="flex-1 h-full overflow-hidden whitespace-nowrap"
       >
+        <CarouselItem />
+        <CarouselItem />
         <CarouselItem />
         <CarouselItem />
         <CarouselItem />
@@ -48,22 +70,32 @@ export default function Carousel() {
         <CarouselItem />
         <CarouselItem />
       </div>
-      <div
-        className="absolute top-[50%] right-0 translate-y-[-50%] translate-x-[100%] cursor-pointer"
-        onClick={() => scroll("right")}
-      >
-        RIGHT
+      <div className="cursor-pointer" onClick={() => manualScroll("right")}>
+        <ChevronRightIcon height="1em" />
       </div>
     </div>
   );
 }
 
 function CarouselItem() {
+  function reloadPage() {
+    location.reload();
+    window.scrollTo(0, 0);
+  }
+
   return (
-    <div className="carousel-item inline-block w-64 h-full bg-blue-400">
-      <div className="w-full h-12 bg-purple-300" />
-      <p>Victorian Couch</p>
-      <p>{PRICE_STR}</p>
+    <div className="carousel-item inline-block w-96 h-full">
+      <div
+        className="w-full h-full flex flex-col px-8 cursor-pointer"
+        onClick={reloadPage}
+      >
+        <img
+          src="/splat_snip.jpg"
+          className="w-full h-24 bg-purple-300 flex-1 object-cover"
+        />
+        <p className="font-light text-base mt-2 mb-1 text-gray-600">Victorian Couch</p>
+        <p className="font-light text-sm text-gray-500">{PRICE_STR}</p>
+      </div>
     </div>
   );
 }

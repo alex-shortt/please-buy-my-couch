@@ -10,3 +10,16 @@
     transform: translateX(-100%);
   }
 }
+
+@layer base {
+  .video-player::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    z-index: 0;
+  }
+}
