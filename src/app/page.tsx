@@ -5,7 +5,7 @@ export default function Home() {
   const sectionClass = "py-8 max-w-4xl mx-auto";
 
   return (
-    <div className="bg-gray-100 min-h-full">
+    <div className="bg-gray-100 min-h-full overflow-x-hidden">
       <div id="top" className={sectionClass}>
         <section id="title" className="mb-8">
           <h1 className="text-4xl text-center">PleaseBuyMyCouch.com</h1>
@@ -19,7 +19,7 @@ export default function Home() {
           <h2 className="text-2xl">Victorian Couch</h2>
           <p className="text-gray-400 text-md">Ships to SF Bay Area Only</p>
           <h2 className="text-2xl">Only $250</h2>
-          <button className="max-w-lg w-full mx-2 mt-4 py-4 text-xl bg-gray-200">
+          <button className="max-w-lg w-[80%] mx-2 mt-4 py-4 text-xl bg-gray-200">
             Buy
           </button>
         </section>
@@ -31,7 +31,7 @@ export default function Home() {
             </DetailPair>
             <DetailPair title="Sizing">Big</DetailPair>
             <DetailPair title="Fun Fact">
-              The upholstery was misprinted ot be inside out. Still looks great
+              The upholstery was misprinted to be inside out. Still looks great
               but now has a very unique design.
             </DetailPair>
           </Details>
