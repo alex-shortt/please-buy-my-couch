@@ -117,9 +117,9 @@ export default function Video() {
           {!playing && <PlayIcon height={32} />}
         </div>
       </div>
-      <div className="text-center mt-4 flex items-center justify-center">
+      <div className="text-center mt-4 flex items-center justify-center text-xl text-gray-700 font-light">
         <ArrowLeftIcon height="1em" />
-        <p className="mx-4">Drag to Rotate</p>
+        <p className="mx-4">DRAG TO ROTATE</p>
         <ArrowRightIcon height="1em" />
       </div>
     </>

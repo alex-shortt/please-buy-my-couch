@@ -1,6 +1,6 @@
 "use client";
 
-import { PRICE_STR } from "@/app/config";
+import { PRICE_STR } from "@/logic/config";
 import { useCallback, useEffect, useRef } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";

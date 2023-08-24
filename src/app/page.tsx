@@ -1,11 +1,12 @@
 import Details, { DetailPair } from "@/app/details";
 import Video from "@/app/video";
 import Carousel from "@/app/carousel";
-import { PRICE_STR } from "@/app/config";
+import { BUY_LINK, PRICE_STR } from "@/logic/config";
 import { BigLine } from "@/app/line";
 import { LinkGroup } from "@/app/links";
 import Image from "next/image";
 import { CaptureAnalytics } from "@/app/capture";
+import { BuyButton } from "@/app/buy";
 
 export default function Home() {
   const navbarheight = "24";
@@ -32,16 +33,14 @@ export default function Home() {
         <section id="product-info" className="mt-12 text-left max-w-xl mx-auto">
           <h2 className="text-3xl font-semibold">VICTORIAN COUCH</h2>
           <h2 className="text-2xl my-2">{PRICE_STR}.00</h2>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-500 text-sm">
             Availability: 1
             <br />
             Ships to SF Bay Area Only.
             <br />
             Delivery Date Arranged Post Purchase.
           </p>
-          <button className="max-w-lg w-full mx-2 mt-4 py-4 text-xl text-white rounded-sm bg-black">
-            Buy
-          </button>
+          <BuyButton />
         </section>
         <br />
         <section id="product-specs" className="mt-12 ">
