@@ -118,7 +118,7 @@ export default function Video() {
           {!playing && <PlayIcon height={32} />}
         </div>
         <div
-          className="absolute bottom-0 p-2 right-0 z-10 hover:opacity-100 opacity-70 cursor-pointer transition-opacity"
+          className="absolute bottom-0 p-2 right-0 z-10 hover:opacity-100 opacity-80 cursor-pointer transition-opacity"
           onClick={() =>
             window.open("https://twitter.com/muse_place", "_blank")
           }
