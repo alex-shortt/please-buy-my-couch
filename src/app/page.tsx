@@ -5,12 +5,14 @@ import { PRICE_STR } from "@/app/config";
 import { BigLine } from "@/app/line";
 import { LinkGroup } from "@/app/links";
 import Image from "next/image";
+import { CaptureAnalytics } from "@/app/capture";
 
 export default function Home() {
   const navbarheight = "24";
 
   return (
     <div className="bg-gray-100 min-h-full overflow-x-hidden">
+      <CaptureAnalytics />
       <section
         id="top"
         className={`fixed w-full top-0 left-0 z-50 bg-gray-100 h-${navbarheight} drop-shadow-xl`}
@@ -32,7 +34,7 @@ export default function Home() {
           <h2 className="text-2xl my-2">{PRICE_STR}.00</h2>
           <p className="text-gray-400 text-sm">
             Availability: 1
-            <br/>
+            <br />
             Ships to SF Bay Area Only.
             <br />
             Delivery Date Arranged Post Purchase.
