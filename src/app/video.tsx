@@ -7,6 +7,7 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
+import Image from "next/image";
 
 export default function Video() {
   const playOnRelease = useRef(true);
@@ -116,10 +117,24 @@ export default function Video() {
           {playing && <PauseIcon height={32} />}
           {!playing && <PlayIcon height={32} />}
         </div>
+        <div
+          className="absolute bottom-0 p-2 right-0 z-10 hover:opacity-100 opacity-70 cursor-pointer transition-opacity"
+          onClick={() =>
+            window.open("https://twitter.com/muse_place", "_blank")
+          }
+        >
+          <Image
+            src="/muse wordmark.png"
+            alt="muse logo"
+            height={1500}
+            width={4200}
+            className="object-contain w-36"
+          />
+        </div>
       </div>
       <div className="text-center mt-4 flex items-center justify-center text-xl text-gray-700 font-light">
         <ArrowLeftIcon height="1em" />
-        <p className="mx-4">DRAG TO ROTATE</p>
+        <p className="mx-4">Drag to Rotate The NeRF</p>
         <ArrowRightIcon height="1em" />
       </div>
     </>

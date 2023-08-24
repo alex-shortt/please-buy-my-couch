@@ -30,7 +30,10 @@ export default function Home() {
         <Video />
       </section>
       <div id="bottom" className="py-8 max-w-4xl mx-auto">
-        <section id="product-info" className="mt-12 text-left max-w-xl mx-auto">
+        <section
+          id="product-info"
+          className="mt-12 text-left max-w-xl mx-auto px-2"
+        >
           <h2 className="text-3xl font-semibold">VICTORIAN COUCH</h2>
           <h2 className="text-2xl my-2">{PRICE_STR}.00</h2>
           <p className="text-gray-500 text-sm">
@@ -48,23 +51,29 @@ export default function Home() {
             <p className="text-gray-600 leading-7">
               Introducing our Victorian Elegance collection, where timeless
               charm meets modern innovation. Crafted with an inadvertent stroke
-              of genius, our blue canvas couch presents an inside-out misprint,
-              turning an ordinary design into an extraordinary statement piece.
-              Lined meticulously with brass bolts, this Victorian-inspired
-              masterpiece effortlessly adapts to the nuances of your living
-              space. Embrace the unique blend of traditional aesthetics and
-              contemporary quirkiness. Revel in the comfort provided by
-              high-resiliency foam cushioning, wrapped in the unconventional
-              beauty of our inside-out canvas. Your living room is ready for an
-              evolution; our Victorian Elegance couch is ready to be part of it.
+              of genius, our blue designer fabric couch presents an inside-out
+              misprint, turning an ordinary design into an extraordinary
+              statement piece. Lined meticulously with brass bolts, this
+              Victorian-inspired masterpiece effortlessly adapts to the nuances
+              of your living space. Embrace the unique blend of traditional
+              aesthetics and contemporary quirkiness. Your living room is ready
+              for an evolution; our Victorian Elegance couch is ready to be part
+              of it.
             </p>
           </Details>
           <Details title="Product Specifications">
-            <DetailPair title="Upholstery">Canvas</DetailPair>
+            <DetailPair title="Upholstery">Designer Fabric</DetailPair>
             <DetailPair title="Suspension Type">
-              Some sort of spring thing
+              Some sort of spring system
             </DetailPair>
-            <DetailPair title="Sizing">Big</DetailPair>
+            <DetailPair title="Sizing">{`3' Tall x 35" Deep x 65" Wide`}</DetailPair>
+            <DetailPair title="Origins">
+              Purchased for $3000 from the{" "}
+              <a href="https://sfdesigncenter.com/" className="underline">
+                San Francisco Design Center
+              </a>{" "}
+              a few years ago.
+            </DetailPair>
             <DetailPair title="Fun Fact">
               The upholstery was misprinted to be inside out. Still looks great
               but now has a very unique design.
@@ -104,11 +113,14 @@ export default function Home() {
             <a href="https://www.google.com/maps/place/San+Francisco+Bay+Area,+CA/@37.8734487,-123.7393586,8z/data=!3m1!4b1!4m6!3m5!1s0x808583a3a688d7b5:0x8c891b8457461fa9!8m2!3d37.8271784!4d-122.2913078!16zL20vMDZwdnI?entry=ttu">
               Map of the Bay
             </a>
-            <a>What is a NeRF?</a>
-            <a>What about Gaussian Splatting?</a>
-            <a>What is Muse?</a>
+            <a href="https://www.youtube.com/watch?v=YX5AoaWrowY">
+              Info on NeRFs
+            </a>
+            <a href="https://twitter.com/smallfly/status/1693020965112828224">
+              Info on Gaussian Splatting
+            </a>
             <a href="https://medium.com/@muse_place/deprecating-muse-2ce8b4f8c3b4">
-              What happened to Muse Place?
+              Muse Place Sunset
             </a>
           </LinkGroup>
           <LinkGroup title="Contact Us">
