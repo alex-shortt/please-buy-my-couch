@@ -93,7 +93,9 @@ function CarouselItem() {
           src="/splat_snip.jpg"
           className="w-full h-24 bg-purple-300 flex-1 object-cover"
         />
-        <p className="font-light text-base mt-2 mb-1 text-gray-600">Victorian Couch</p>
+        <p className="font-light text-base mt-2 mb-1 text-gray-600">
+          Victorian Couch
+        </p>
         <p className="font-light text-sm text-gray-500">{PRICE_STR}</p>
       </div>
     </div>

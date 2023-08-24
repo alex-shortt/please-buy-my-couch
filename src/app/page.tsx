@@ -27,16 +27,37 @@ export default function Home() {
         <Video />
       </section>
       <div id="bottom" className="py-8 max-w-4xl mx-auto">
-        <section id="product-info" className="mt-12 text-center">
-          <h2 className="text-2xl">Victorian Couch</h2>
-          <p className="text-gray-400 text-md">Ships to SF Bay Area Only</p>
-          <h2 className="text-2xl">Only {PRICE_STR}</h2>
-          <button className="max-w-lg w-[80%] mx-2 mt-4 py-4 text-xl bg-gray-200">
+        <section id="product-info" className="mt-12 text-left max-w-xl mx-auto">
+          <h2 className="text-3xl font-semibold">VICTORIAN COUCH</h2>
+          <h2 className="text-2xl my-2">{PRICE_STR}.00</h2>
+          <p className="text-gray-400 text-sm">
+            Availability: 1
+            <br/>
+            Ships to SF Bay Area Only.
+            <br />
+            Delivery Date Arranged Post Purchase.
+          </p>
+          <button className="max-w-lg w-full mx-2 mt-4 py-4 text-xl text-white rounded-sm bg-black">
             Buy
           </button>
         </section>
         <br />
         <section id="product-specs" className="mt-12 ">
+          <Details title="Details">
+            <p className="text-gray-600 leading-7">
+              Introducing our Victorian Elegance collection, where timeless
+              charm meets modern innovation. Crafted with an inadvertent stroke
+              of genius, our blue canvas couch presents an inside-out misprint,
+              turning an ordinary design into an extraordinary statement piece.
+              Lined meticulously with brass bolts, this Victorian-inspired
+              masterpiece effortlessly adapts to the nuances of your living
+              space. Embrace the unique blend of traditional aesthetics and
+              contemporary quirkiness. Revel in the comfort provided by
+              high-resiliency foam cushioning, wrapped in the unconventional
+              beauty of our inside-out canvas. Your living room is ready for an
+              evolution; our Victorian Elegance couch is ready to be part of it.
+            </p>
+          </Details>
           <Details title="Product Specifications">
             <DetailPair title="Upholstery">Canvas</DetailPair>
             <DetailPair title="Suspension Type">

@@ -4,7 +4,7 @@ export default function Details(props: {
 }) {
   return (
     <div className="w-full max-w-3xl px-8 mx-auto my-16">
-      <h1 className="text-2xl text-gray-800">{props.title}</h1>
+      <h1 className="text-xl text-gray-800">{props.title}</h1>
       <div className="w-full h-0.5 bg-gray-300 mb-2" />
       {props.children}
     </div>
