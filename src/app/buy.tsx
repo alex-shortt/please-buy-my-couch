@@ -4,11 +4,8 @@ import { BUY_LINK } from "@/logic/config";
 
 export function BuyButton() {
   return (
-    <button
-      className="w-full mt-4 py-4 text-xl text-white rounded-sm bg-black"
-      onClick={() => (window.location.href = BUY_LINK)}
-    >
-      Buy
+    <button className="cursor-default w-full mt-4 py-4 text-xl text-gray-300 rounded-sm bg-gray-400">
+      Sold
     </button>
   );
 }

@@ -37,7 +37,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold">VICTORIAN COUCH</h2>
           <h2 className="text-2xl my-2">{PRICE_STR}.00</h2>
           <p className="text-gray-500 text-sm">
-            Availability: 1
+            Availability: 0
             <br />
             Ships to SF Bay Area Only.
             <br />
